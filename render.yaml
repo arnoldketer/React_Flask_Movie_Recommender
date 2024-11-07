@@ -1,8 +1,11 @@
 services:
   - type: web
-    name: movie-recommender-backend
+    name: your-service-name
     env: python
     plan: free
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "python app.py"
-    pythonVersion: 3.9.6
+    buildCommand: pip install -r requirements.txt
+    startCommand: |
+      python3.9 -m venv venv  # Create a Python 3.9 virtual environment
+      . venv/bin/activate      # Activate the virtual environment
+      python app.py            # Start the server using app.py
+    pythonVersion: 3.9.6 # Specify Python version
