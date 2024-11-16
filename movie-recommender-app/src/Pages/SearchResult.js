@@ -17,6 +17,9 @@ const SearchResult = () => {
     const [currGenre, setCurrGenre] = useState([{}]);
     const [videoData, setVideoData] = useState([]);
     const [playTrailer, setPlayTrailer] = useState(0);
+
+    const backendUrl = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
+
     const gotCast = (castData) => {
         setCastMembers([]);
 
@@ -84,7 +87,7 @@ const SearchResult = () => {
                 Response.json().then((data) => gotTMDBData(data))
             );
             // getting list of recommended movie from our flask server
-            fetch(`/api/similarity/${inputValue}`).then((Response) =>
+            fetch(`${backendUrl}/api/similarity/${inputValue}`).then((Response) =>
                 Response.json().then((data) => gotRecommendedData(data))
             );
             // getting the list of all genres
