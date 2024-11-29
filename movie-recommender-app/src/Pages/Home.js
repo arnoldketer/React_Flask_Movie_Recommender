@@ -12,13 +12,15 @@ const Home = () => {
     const [selectedGenres, setSelectedGenres] = useState([]);
     const [currMovies, setCurrMovies] = useState([{}]);
 
+    const backendUrl = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
+
     useEffect(() => {
         setCurrMovies([]);
         setSelectedGenres([]);
         setHomeGenreList([]);
         setList([]);
         //getting the list of all movies from our flask server for our searchbar
-        fetch("/api/movies").then((Response) =>
+        fetch(`${backendUrl}/api/movies`).then((Response) =>
             Response.json().then((data) => setList(data.arr))
         );
         // getting the list of all genres
@@ -79,10 +81,6 @@ const Home = () => {
                     {/*Rendering the searchbar */}
                     <SearchBar movies={list} placeholder="Search for a Movie" />
                 </div>
-
-                {/* <div className="in-theater-wrapper">
-                    <InTheaterMovies />
-                </div> */}
 
                 <h2 className="genreHeader">Get Top Movies Based On Genre </h2>
                 <div className="buttonGrid">
