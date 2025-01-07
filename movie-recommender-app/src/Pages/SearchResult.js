@@ -87,7 +87,13 @@ const SearchResult = () => {
                 Response.json().then((data) => gotTMDBData(data))
             );
             // getting list of recommended movie from our flask server
-            fetch(`${backendUrl}/api/similarity/${inputValue}`).then((Response) =>
+            fetch(`${backendUrl}/api/similarity/${inputValue}`, {
+                method: "GET",
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem("token")}`,
+                    "Content-Type": "application/json",
+                },
+            }).then((Response) =>
                 Response.json().then((data) => gotRecommendedData(data))
             );
             // getting the list of all genres

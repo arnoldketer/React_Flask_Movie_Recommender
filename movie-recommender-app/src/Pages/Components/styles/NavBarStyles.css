@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap");
+
 .logo {
     width: 130px;
     height: 55.59px;
@@ -7,7 +8,7 @@
     margin-left: 10px;
 }
 
-.navbar-logo{
+.navbar-logo {
     color: #f70d0d;
     font-size: 2rem;
     cursor: pointer;
@@ -41,47 +42,67 @@
     position: relative;
 }
 
-.header-btn1 {
-    margin-top: 15px;
-    text-decoration: none !important;
-    color: #fff !important;
-    border-radius: 0.3em;
-    float: right;
-    font-weight: 600;
-    padding: 5px 15px;
-    background: #d62828;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-}
-.header-btn2 {
-    background-color: transparent;
-}
-
 .header {
     height: 10%;
     margin-bottom: 10px;
-    /* display: flex;
+    display: flex;
     justify-content: space-between;
-    align-items: center; */
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.header-btn {
+    text-decoration: none !important;
+    color: #fff !important;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    padding: 8px 20px;
+    border-radius: 0.3em;
+    background: #d62828;
+    transition: all 0.3s ease-in-out;
+}
+
+.header-btn:hover {
+    background: #f70d0d;
+    transform: translateY(-2px);
+}
+
+.header-btn i {
+    margin-right: 5px;
+}
+
+.header-btn.active {
+    font-weight: bold;
+    border-bottom: 2px solid #f70d0d;
 }
 
 @media (max-width: 650px) {
     .logo {
         width: 120px;
     }
-    .header-btn1 {
-        padding: 4px 10px;
+    .header-btn {
+        padding: 6px 12px;
     }
 }
+
 @media (max-width: 450px) {
     .logo {
         margin-top: 8px;
         width: 100px;
         height: 45px;
     }
-    .header-btn1 {
-        padding: 3px 8px;
+    .header-btn {
+        padding: 4px 8px;
         font-size: small;
-        margin-top: 18px;
+    }
+    .nav-links {
+        gap: 10px;
     }
 }
+
