@@ -82,7 +82,7 @@ const Home = () => {
                     <SearchBar movies={list} placeholder="Search for a Movie" />
                 </div>
 
-                <h2 className="genreHeader">Get Top Movies Based On Genre </h2>
+                {/* <h2 className="genreHeader">Get Top Movies Based On Genre </h2>
                 <div className="buttonGrid">
                     {homeGenreList.map((genre) => (
                         <div
@@ -103,14 +103,14 @@ const Home = () => {
                             ) : null}
                         </div>
                     ))}
-                </div>
+                </div> */}
             </div>
             {/*Rendering selected genre movies */}
-            <div className="container-fluid HomeMovies">
+            {/* <div className="container-fluid HomeMovies">
                 <div className="container HomeMovieGrid">
                     {currMovies.length > 0 ? renderMovies() : null}
                 </div>
-            </div>
+            </div> */}
             <div className="HomeFooter">
                 <Footer />
             </div>
